@@ -2,58 +2,70 @@
 //  ViewController.swift
 //  ios101-project5-tumbler
 //
-
 import UIKit
 import Nuke
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var posts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.dataSource = self
+        tableView.rowHeight = 120
         
         fetchPosts()
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostTableViewCell else {
+            fatalError("Could not dequeue PostTableViewCell")
+        }
+
+        let post = posts[indexPath.row]
+        cell.summaryLabel.text = post.summary
+
+      
+        return cell
+    }
 
     func fetchPosts() {
-        let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork/posts/photo?api_key=1zT8CiXGXFcQDyMFG7RtcfGLwTdDjFUJnZzKJaWTmgyK4lKGYk")!
-        let session = URLSession.shared.dataTask(with: url) { data, response, error in
+        let apiKey = "YOUR_API_KEY" // Replace with your Tumblr API key
+        let urlString = "https://api.tumblr.com/v2/blog/humansofnewyork/posts/photo?api_key=\(apiKey)"
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             if let error = error {
-                print("❌ Error: \(error.localizedDescription)")
+                print("Network error:", error)
                 return
             }
-
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, (200...299).contains(statusCode) else {
-                print("❌ Response error: \(String(describing: response))")
-                return
-            }
-
+            
             guard let data = data else {
-                print("❌ Data is NIL")
+                print("No data returned")
                 return
             }
-
+            
             do {
                 let blog = try JSONDecoder().decode(Blog.self, from: data)
-
-                DispatchQueue.main.async { [weak self] in
-
-                    let posts = blog.response.posts
-
-
-                    print("✅ We got \(posts.count) posts!")
-                    for post in posts {
-                        print("🍏 Summary: \(post.summary)")
-                    }
+                DispatchQueue.main.async {
+                    self?.posts = blog.response.posts
+                    self?.tableView.reloadData()
                 }
-
             } catch {
-                print("❌ Error decoding JSON: \(error.localizedDescription)")
+                print("Decoding error:", error)
             }
-        }
-        session.resume()
+        }.resume()
     }
 }

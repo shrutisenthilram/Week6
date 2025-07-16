@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1990C4D62E276002003B8BAC /* PostTableView.Cellswift in Sources */ = {isa = PBXBuildFile; fileRef = 1990C4D52E276002003B8BAC /* PostTableView.Cellswift */; };
+		1990C4D82E2761C3003B8BAC /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1990C4D72E2761B9003B8BAC /* PostTableViewCell.swift */; };
 		ED59161029BC307D000F25AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59160F29BC307D000F25AE /* AppDelegate.swift */; };
 		ED59161229BC307D000F25AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59161129BC307D000F25AE /* SceneDelegate.swift */; };
 		ED59161429BC307D000F25AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59161329BC307D000F25AE /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1990C4D52E276002003B8BAC /* PostTableView.Cellswift */ = {isa = PBXFileReference; lastKnownFileType = text; path = PostTableView.Cellswift; sourceTree = "<group>"; };
+		1990C4D72E2761B9003B8BAC /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		ED59160C29BC307D000F25AE /* ios101-project5-tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios101-project5-tumblr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED59160F29BC307D000F25AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED59161129BC307D000F25AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		ED59160E29BC307D000F25AE /* ios101-project5-tumblr */ = {
 			isa = PBXGroup;
 			children = (
+				1990C4D52E276002003B8BAC /* PostTableView.Cellswift */,
+				1990C4D72E2761B9003B8BAC /* PostTableViewCell.swift */,
 				ED59160F29BC307D000F25AE /* AppDelegate.swift */,
 				ED59161129BC307D000F25AE /* SceneDelegate.swift */,
 				ED59161329BC307D000F25AE /* ViewController.swift */,
@@ -161,7 +167,9 @@
 				ED59161429BC307D000F25AE /* ViewController.swift in Sources */,
 				ED59161029BC307D000F25AE /* AppDelegate.swift in Sources */,
 				ED59161229BC307D000F25AE /* SceneDelegate.swift in Sources */,
+				1990C4D62E276002003B8BAC /* PostTableView.Cellswift in Sources */,
 				ED59162429BC4921000F25AE /* Post.swift in Sources */,
+				1990C4D82E2761C3003B8BAC /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

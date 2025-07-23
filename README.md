@@ -1,23 +1,20 @@
-# Project 5 - Tumblr
+# Project 6 - Tumblr
 
-Submitted by: Shruti Senthilram
+Submitted by: Shruti
 
 Tumblr is an app that ... [TODO] 
 
-Time spent: 2 hours spent in total
+Time spent: 1 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] App has a configured table view and table view call
-- [ ] App populates the table view with data fetched from an API
+- [ ] Setup navigation to the Detail Screen
+- [ ] Created the Detail View UI
+- [ ] Add the ability to pass data to the Detail View Controller
+- [ ] Made personal finishing touches to the UI
 
-
-The following **optional** features are implemented:
-
-- [ ] App fetches posts from a different Tumblr blog
-- [ ] App has a refresh control to update the table view
 
 The following **additional** features are implemented:
 
@@ -33,7 +30,7 @@ Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove th
 
 Describe any challenges encountered while building the app.
 
-The issue I'm facing right now, is that although I've written the code and everything, it's not really showing up in the simulator. I'm not quite sure where to go from there, so I'm working on debugging right now.
+I still have a lot of work to do on this project since I'm a bit behind.
 
 ## License
 
@@ -50,3 +47,5 @@ The issue I'm facing right now, is that although I've written the code and every
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
